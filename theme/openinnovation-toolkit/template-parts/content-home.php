@@ -20,7 +20,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-xs-12 col-md-offset-1">
-         <h2 <a href="/gather-insights/">Build</a> | <a href="">Empower</a> | <a href="">Communicate</a> | <a href="">Open</a></h2>
+         <h2> <a href="https://leadershiptoolkit.production.paas.mozilla.community/gather-insights/">Build</a> | <a href="https://leadershiptoolkit.production.paas.mozilla.community/ideate/">Empower</a> | <a href="https://leadershiptoolkit.production.paas.mozilla.community/communicate/">Communicate</a> | <a href="https://leadershiptoolkit.production.paas.mozilla.community/prototype-test/">Open</a></h2>
       </div>
     </div>
   </div>
