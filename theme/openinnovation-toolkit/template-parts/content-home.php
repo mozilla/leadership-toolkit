@@ -27,7 +27,7 @@
 </section>
 
 <?php
-  echo oit_home_processes();
+  //echo oit_home_processes();
 ?>
 
 
