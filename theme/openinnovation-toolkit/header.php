@@ -20,15 +20,9 @@ test
   <header id="masthead" class="site-header" role="banner">
     <div class="container1">
       <div class="site-branding">
-        <?php
-          if ( is_front_page() && is_home() ) : ?>
-            <h1 class="site-title"><a href="<?php echo SITE_URL; ?>" title="<?php echo SITE_NAME; ?>" rel="home"><img src="https://toolkit.mozilla.org/wp-content/uploads/2016/09/logo.png" alt="<?php echo SITE_NAME; ?>" class="img-responsive" /></a></h1>
-          <?php else : ?>
-            <p class="site-title"><a href="<?php echo SITE_URL; ?>" title="<?php echo SITE_NAME; ?>" rel="home"><img src="https://toolkit.mozilla.org/wp-content/uploads/2016/09/logo.png" alt="<?php echo SITE_NAME; ?>" class="img-responsive" /></a></p>
-          <?php endif; 
-        ?>
+        
       </div><!-- .site-branding -->
-      
+
       <button id="menu-toggle" class="menu-toggle"><span><?php _e( 'Primary Menu', 'twentysixteen' ); ?></span></button>
       <div class="site-navigation">
         <?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -45,7 +39,7 @@ test
             <?php endif; ?>
           </div><!-- .site-header-menu -->
         <?php endif; ?>
-          
+
         <?php echo oit_search_form();?>
       </div>
     </div>
