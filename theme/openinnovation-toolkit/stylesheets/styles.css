@@ -4693,7 +4693,7 @@ body.prototype-test .detail-item h4 {
  */
 /* line 1629, ../sass/styles.scss */
 .process-illustration {
-  background: url(../images/arrows.png) no-repeat center center;
+  //background: url(../images/arrows.png) no-repeat center center;
   background-size: 330px 307px;
   height: 460px;
   width: 428px;
@@ -4892,12 +4892,12 @@ body.prototype-test .detail-item h4 {
 /* line 1803, ../sass/styles.scss */
 .section-messages-slider .bx-wrapper .bx-prev {
   left: 0;
-  background: url(../images/arrow-left.png) no-repeat 0 0;
+  //background: url(../images/arrow-left.png) no-repeat 0 0;
 }
 /* line 1809, ../sass/styles.scss */
 .section-messages-slider .bx-wrapper .bx-next {
   right: 0;
-  background: url(../images/arrow-right.png) no-repeat 0 0;
+  //background: url(../images/arrow-right.png) no-repeat 0 0;
 }
 /* line 1814, ../sass/styles.scss */
 .section-messages-slider .bx-wrapper .bx-prev:hover {
@@ -5196,23 +5196,23 @@ body.prototype-test .detail-item h4 {
 /* line 2077, ../sass/styles.scss */
 #section-processes .prev {
   left: 0;
-  background-image: url(../images/arrow-left.png);
+  //background-image: url(../images/arrow-left.png);
 }
 /* line 2081, ../sass/styles.scss */
 #section-processes .next {
   right: 0;
-  background-image: url(../images/arrow-right.png);
+  //background-image: url(../images/arrow-right.png);
 }
 @media (max-width: 991px) {
   /* line 2087, ../sass/styles.scss */
   #section-processes .prev {
     left: 25px;
-    background-image: url(../images/arrow-left-small.png);
+  //  background-image: url(../images/arrow-left-small.png);
   }
   /* line 2092, ../sass/styles.scss */
   #section-processes .next {
     right: 25px;
-    background-image: url(../images/arrow-right-small.png);
+    //background-image: url(../images/arrow-right-small.png);
   }
   /* line 2097, ../sass/styles.scss */
   #section-processes .next, #section-processes .prev {
