@@ -4,7 +4,6 @@
  */
 ?>
 
-<section class="home-section section-intro">
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-xs-12 col-md-offset-2">
@@ -12,19 +11,28 @@
         <?php the_content();?>
       </div>
     </div>
-    
+
     <div class="abstarct abstract-home-tl hidden-md-down"><img src="<?php echo THEME_PATH;?>/images/abstract-home-tl.png" alt="" /></div>
     <div class="abstarct abstract-home-tr hidden-md-down"><img src="<?php echo THEME_PATH;?>/images/abstract-home-tr.png" alt="" /></div>
   </div>
 </section>
+<section class="home-section section-questions">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+         <h2 <a href="">BUILD</a> | <a href="">EMPOWER</a> | <a href="">COMMUNICATE</a> | <a href="">OPEN<</a>/h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-<?php 
+<?php
   echo oit_home_processes();
 ?>
 
 
 
-<section class="home-section section-questions">
+<!-- section class="home-section section-questions">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-xs-12 col-md-offset-1">
@@ -34,17 +42,19 @@
       </div>
     </div>
   </div>
-</section>
+</section -->
 
 <section class="home-section section-methods">
   <div class="container">
-    <h3 class="heading3"><a href="<?php echo SITE_URL;?>/methods/">Browse Methods</a></h3>
+    <h3 class="heading3"><a href="<?php echo SITE_URL;?>/methods/">Browse Resources</a></h3>
     <div class="row">
-      <?php echo oit_methods();?>
+      BUILD EMPOWER ETC
+
+
     </div>
   </div>
 </section>
 
-<section class="home-section section-messages-slider">
-  <?php echo oit_message_slider();?>
-</section>
+<!--section class="home-section section-messages-slider">
+  <?php //echo oit_message_slider();?>
+</section-->

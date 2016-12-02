@@ -796,7 +796,7 @@ function oit_home_processes() {
   $processes = oit_process_pages();
   if($processes) {
     $counter = 0;
-    //$illustrations = '<ul class="process-illustration switch-process">';
+    $illustrations = '<ul class="process-illustration switch-process">';
     $text_links = '<ul class="pager-links switch-process">';
     $process_content = '';
     $active_slug = '';
@@ -809,7 +809,7 @@ function oit_home_processes() {
         $active = '';
       }
 
-  //    $illustrations .= '<li class="process-'.$slug.$active.'"><a href="#'.$slug.$active.'" data-class="'.$slug.'">'.$process->post_title.'</a></li>';
+      $illustrations .= '<li class="process-'.$slug.$active.'"><a href="#'.$slug.$active.'" data-class="'.$slug.'">'.$process->post_title.'</a></li>';
       $text_links .= '<li class="process-'.$slug.$active.'"><a href="'.$slug.$active.'" data-class="'.$slug.'">'.$process->post_title.'</a></li>';
 
       $process_content .= '<div class="process-content '.$slug.$active.'">';
