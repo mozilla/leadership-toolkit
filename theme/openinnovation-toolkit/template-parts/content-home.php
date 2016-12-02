@@ -20,14 +20,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-xs-12 col-md-offset-1">
-         <h2 <a href="/gather-insights/">BUILD</a> | <a href="">EMPOWER</a> | <a href="">COMMUNICATE</a> | <a href="">OPEN</a>/h2>
+         <h2 <a href="/gather-insights/">Build</a> | <a href="">Empower</a> | <a href="">Communicate</a> | <a href="">Open</a></h2>
       </div>
     </div>
   </div>
 </section>
 
 <?php
-  echo oit_home_processes();
+  //echo oit_home_processes();
 ?>
 
 
