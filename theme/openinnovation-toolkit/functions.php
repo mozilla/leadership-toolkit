@@ -34,15 +34,15 @@ add_action( 'after_setup_theme', 'disable_json_api' );
 global $OIT;
 function oit_global_vars() {
   global $OIT;
-  
+
   $args = array(
       'hierarchical' =>  0,
       'taxonomy' => 'process',
       'hide_empty' => false,
-      'pad_counts' => false 
+      'pad_counts' => false
   );
   $processes = get_categories( $args );
-  
+
 //  var_dump($processes);
   $OIT['processes'] = $processes;
 }
@@ -104,11 +104,11 @@ function oit_clean_content($content) {
     $content = str_replace(" src='".$domain, " src='", $content );
     $content = str_replace(" href='".$domain, " href='", $content );
   }
-  
+
   //strip inline span and styles
   $content = strip_only_tags($content, array('span'));
   $content = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $content);
-  
+
   return $content;
 }
 add_filter('content_save_pre','oit_clean_content','99');
@@ -147,18 +147,18 @@ function remove_admin_bar() {
  */
 function twentysixteen_login_logo() {
 	echo '<style type="text/css">
-		h1 a { 
+		h1 a {
       background-image:url('.THEME_PATH.'/images/logo.png) !important;
       background-size: 240px 72px !important;
       width: 240px !important;
       height: 72px !important;
     }
-    
+
     h1{
       display: block;
       width: 100% !important;
     }
-  
+
     h1 a {
       background: none !important;
       width: auto !important;
@@ -168,7 +168,7 @@ function twentysixteen_login_logo() {
       font-weight: 300 !important;
       text-indent: 0 !important;
       color: #000 !important;
-      
+
     }
   </style>"
 
@@ -216,7 +216,7 @@ function twentysixteen_javascript_detection() {
 function twentysixteen_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 //	wp_enqueue_style( 'twentysixteen-fonts', twentysixteen_fonts_url(), array(), null );
-  
+
   wp_enqueue_style('font-mozilla-fira', 'https://code.cdn.mozilla.net/fonts/fira.css', array(), false, 'screen,projection,print');
   wp_enqueue_style('font-CooperHewitt', THEME_PATH.'/fonts/fonts.css', array(), false, 'screen,projection,print');
 
@@ -234,12 +234,12 @@ function twentysixteen_scripts() {
   wp_enqueue_script('bootstrap-tooltip', THEME_PATH . '/js/tooltip.js', array('jquery'), '3.3.6');
   wp_enqueue_script('bootstrap-popover', THEME_PATH . '/js/popover.js', array('jquery'), '3.3.6');
   wp_enqueue_script('bootstrap-modal', THEME_PATH . '/js/modal.js', array('jquery'), '3.3.6');
-  
-  
+
+
   // Loading bxslider jquery plugin
   wp_enqueue_script( 'jquery-bxslider', THEME_PATH . '/js/jquery.bxslider.min.js', array(), 'v4.1.2', false );
   wp_enqueue_style( 'bxslider', THEME_PATH .'/css/jquery.bxslider.css' );
-  
+
 	wp_enqueue_script( 'twentysixteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151204', true );
 }
 add_action( 'wp_enqueue_scripts', 'twentysixteen_scripts' );
@@ -287,7 +287,7 @@ function oit_page_banner($o=null) {
     }
     $header_type = $o['header_type'][0];
   }
-  
+
   $return = '';
   switch($header_type) {
     case 'slider':
@@ -303,7 +303,7 @@ function oit_page_banner($o=null) {
         $return .= '</ul>';
       }
       break;
-    
+
     case 'banner':
       if(is_404()) {
         $banner_image = THEME_PATH.'/images/slider1.jpg';
@@ -312,12 +312,12 @@ function oit_page_banner($o=null) {
         $banner_image = get_field('banner_image', $post->ID);
         $banner_text = $o['banner_text'][0];
       }
-      
+
       $return .= '<div class="page-banner" style="background-image: url('.$banner_image.');">';
         $return .= '<div class="container"><div class="banner-content animated fadeInDown"><span>'.$banner_text.'</span></div></div>';
       $return .= '</div>';
       break;
-    
+
     default:
       break;
   }
@@ -358,7 +358,7 @@ function shortcodeSocialLinks($atts = null, $content = null) {
   extract(shortcode_atts(array(
       'title' => '',
   ), $atts));
-  
+
   $return = '';
   $return .= '<ul class="social-links">';
     $return .= '<li><a href="https://twitter.com/#" target="_blank"><i class="genericon genericon-twitter" title="Twitter"></i></a></li>';
@@ -404,7 +404,7 @@ function shortcodeGunaintlHighlighted($atts = null, $content = null) {
       'font' => 'sans-serif',
       'size' => 'medium',
   ), $atts));
-  
+
   return '<div class="highlighted '.$size.' '.$font.'">'.$content.'</div>';
 }
 
@@ -420,7 +420,7 @@ function shortcodeGunaintlTestimonials() {
       'caller_get_posts'=> 1
   );
   $results = query_posts($args);
-  
+
   if($results) {
     $return .= '<div id="testimonials">';
     $return .= '<span class="quote-start">&ldquo;</span>';
@@ -471,7 +471,7 @@ function shortcodeGunaintlClients($atts = null, $content = null) {
   extract(shortcode_atts(array(
       'slider' => false,
   ), $atts));
-  
+
   $return = '';
   $args=array(
       'post_type' => 'client',
@@ -480,7 +480,7 @@ function shortcodeGunaintlClients($atts = null, $content = null) {
       'caller_get_posts'=> 1
   );
   $results = query_posts($args);
-  
+
   if($results) {
     $return .= '<div id="clients">';
     $return .= ($slider) ? '<ul class="clients-slider">' : '<ul>';
@@ -499,13 +499,13 @@ function shortcodeGunaintlClients($atts = null, $content = null) {
 
 function oit_methods($process=null, $num=6) {
   $return = '';
-  
+
   if(is_null($process)) {
     $args = array(
         'hierarchical' =>  0,
         'taxonomy' => 'process',
         'hide_empty' => false,
-        'pad_counts' => false 
+        'pad_counts' => false
     );
     $processes = get_categories( $args );
     if($processes) {
@@ -523,7 +523,7 @@ function oit_methods($process=null, $num=6) {
               'terms' => $process->term_id
           )
       );
-      
+
       $results = query_posts($args);
       foreach($results as $result) {
         $return .= '<div class="col-sm-4 col-xs-12">';
@@ -533,8 +533,8 @@ function oit_methods($process=null, $num=6) {
       wp_reset_query();
     }
   } else {
-    
-    
+
+
     $args=array(
         'post_type' => 'method',
         'post_status' => 'publish',
@@ -547,7 +547,7 @@ function oit_methods($process=null, $num=6) {
             )
         )
     );
-    
+
     $results = query_posts($args);
     foreach($results as $result) {
       $return .= '<div class="col-sm-4 col-xs-12">';
@@ -568,7 +568,7 @@ function oit_all_methods($args=null) {
       'post_status' => 'publish',
       'posts_per_page' => $page_size,
   );
-  
+
   $process_slug = get_query_var('action');
   if(!empty($process_slug)) {
     if($process_slug === 'search') {
@@ -614,7 +614,7 @@ function oit_all_methods($args=null) {
   $return .= '</div>';
 
   $return .= '<div class="clear"></div>';
-  
+
   $total_count = $the_query->found_posts;
   if($total_count > $page_size) {
     $return .= '<a href="#" class="load-more-button">Loading Methods</a>';
@@ -649,19 +649,19 @@ function oit_display_method_card($result) {
       $return .= '<h3>'.$result->post_title.'</h3>';
       $return .= apply_filters('the_content', $o['excerpt'][0]);
     $return .= '</div>';
-    
+
     $return .= '<footer class="item-footer">';
       $return .= '<div class="difficulty-level '.$o['difficulty_level'][0].'">'.ucfirst($o['difficulty_level'][0]).'</div>';
       $return .= '<div class="duration">'.oit_method_duration($o).'</div>';
     $return .= '</footer>';
   $return .= '</a>';
-  
+
   return $return;
 }
 
 
 
-/* 
+/*
  * Functions related to questions listing
  */
 function oit_get_questions() {
@@ -679,7 +679,7 @@ function oit_questions_list($questions=null) {
   if(is_null($questions)) {
     $questions = oit_get_questions();
   }
-  
+
   $return = '';
   if($questions) {
     foreach($questions as $question) {
@@ -691,7 +691,7 @@ function oit_questions_list($questions=null) {
       $return .= '</div>';
     }
   }
-  
+
   return $return;
 }
 
@@ -699,7 +699,7 @@ function oit_questions_dropdown($questions=null) {
   if(is_null($questions)) {
     $questions = oit_get_questions();
   }
-  
+
   $return = '';
   if($questions) {
     $return .= '<div class="questions-dropdown">';
@@ -717,7 +717,7 @@ function oit_questions_dropdown($questions=null) {
 
 
 
-/* 
+/*
  * Functions related to glossary term slisting
  */
 function oit_get_terms() {
@@ -737,7 +737,7 @@ function oit_terms_list($terms=null) {
   if(is_null($terms)) {
     $terms = oit_get_terms();
   }
-  
+
   $return = '';
   if($terms) {
     foreach($terms as $term) {
@@ -747,7 +747,7 @@ function oit_terms_list($terms=null) {
       $return .= '</div>';
     }
   }
-  
+
   return $return;
 }
 
@@ -755,7 +755,7 @@ function oit_term_letters($terms=null) {
   if(is_null($terms)) {
     $terms = oit_get_terms();
   }
-  
+
   $return = '';
   $letters = array();
   if($terms) {
@@ -765,7 +765,7 @@ function oit_term_letters($terms=null) {
         $letters[] = $letter;
       }
     }
-    
+
     $return .= '<ul class="glossary-letters">';
     foreach (range('A', 'Z') as $char) {
       $return .= '<li>';
@@ -787,7 +787,7 @@ function oit_process_pages() {
       'order' => 'ASC',
       'meta_value' => 'page-templates/process.php'
   ));
-  
+
   wp_reset_query();
   return $pages;
 }
@@ -796,7 +796,7 @@ function oit_home_processes() {
   $processes = oit_process_pages();
   if($processes) {
     $counter = 0;
-    $illustrations = '<ul class="process-illustration switch-process">';
+    //$illustrations = '<ul class="process-illustration switch-process">';
     $text_links = '<ul class="pager-links switch-process">';
     $process_content = '';
     $active_slug = '';
@@ -808,28 +808,28 @@ function oit_home_processes() {
       } else {
         $active = '';
       }
-      
-      $illustrations .= '<li class="process-'.$slug.$active.'"><a href="#'.$slug.$active.'" data-class="'.$slug.'">'.$process->post_title.'</a></li>';
+
+  //    $illustrations .= '<li class="process-'.$slug.$active.'"><a href="#'.$slug.$active.'" data-class="'.$slug.'">'.$process->post_title.'</a></li>';
       $text_links .= '<li class="process-'.$slug.$active.'"><a href="'.$slug.$active.'" data-class="'.$slug.'">'.$process->post_title.'</a></li>';
-      
+
       $process_content .= '<div class="process-content '.$slug.$active.'">';
         $process_content .= '<h2 class="heading2"><a href="'.SITE_URL.'/'.$slug.'/">'.$process->post_title.'</a></h2>';
         $process_content .= apply_filters('the_content', $process->post_content);
         $process_content .= '<a href="'.SITE_URL.'/'.$slug.'/" class="learn-more-link">Learn more</a>';
-      $process_content .= '</div>'; 
-      
+      $process_content .= '</div>';
+
       $counter++;
     }
     $illustrations .= '</ul>';
     $text_links .= '</ul>';
   }
-  
-  
+
+
   $return = '<section id="section-processes" class="'.$active_slug.'">';
     $return .= '<a href="#prev" class="prev">Previous</a>';
     $return .= '<a href="#next" class="next">Next</a>';
-  
-  
+
+
     $return .= '<div class="container">';
       $return .= '<div class="row">';
         $return .= '<div class="col-md-10 col-xs-12 col-md-offset-1">';
@@ -847,7 +847,7 @@ function oit_home_processes() {
       $return .= $text_links;
     $return .= '</div>';
   $return .= '</section>';
-  
+
   return $return;
 }
 
@@ -860,7 +860,7 @@ function oit_process_slider() {
     foreach($processes as $process) {
       $processList[$process->post_name] = $process->post_title;
     }
-    
+
     $counter = 0;
     $current = 0;
     $slides = array();
@@ -868,11 +868,11 @@ function oit_process_slider() {
     $return .= '<ul>';
     foreach($processes as $process) {
       $slug = $process->post_name;
-      
+
       if($slug===$post->post_name) {
         $current = $counter;
       }
-      
+
       $slide = '<li class="process-slide">';
         $slide .= '<div class="process-illustration-wrapper">';
           $slide .= '<div class="container">';
@@ -896,8 +896,8 @@ function oit_process_slider() {
             $slide .= '</div>';
           $slide .= '</div>';
         $slide .= '</div>';
-        
-        
+
+
         $slide .= '<div class="process-methods">';
           $slide .= '<div class="container">';
             $slide .= '<div class="heading-wrapper">';
@@ -911,16 +911,16 @@ function oit_process_slider() {
             $slide .= '<div class="footer-quick-links hidden-sm-up">';
               $slide .= '<a href="'.SITE_URL.'/methods/" class="quick-link link-left">View all</a><br /><a href="'.SUBMIT_PAGE_URL.'/method/" class="quick-link">Submit a method</a>';
             $slide .= '</div>';
-            
+
           $slide .= '</div>';
         $slide .= '</div>';
-        
+
       $slide .= '</li>';
-      
+
       $slides[$counter] = $slide;
       $counter++;
     }
-    
+
     $totSlides = count($slides);
     for($i=$current; $i<$totSlides; $i++) {
       $return .= $slides[$i];
@@ -938,8 +938,8 @@ function oit_process_slider() {
 
 function oit_method_details($o) {
   $return = '';
-  
-  
+
+
   $return .= '<div class="row">';
     $return .= '<div class="col-sm-4 col-xs-12">';
       $return .= '<div class="detail-item time-wrapper">';
@@ -956,7 +956,7 @@ function oit_method_details($o) {
 
       $return .= '</div>';
     $return .= '</div>';
-    
+
     $return .= '<div class="col-sm-4 col-xs-12">';
       $return .= '<div class="detail-item difficulty-wrapper '.$o['difficulty_level'][0].'">';
         $return .= '<h4>Difficulty</h4>';
@@ -969,14 +969,14 @@ function oit_method_details($o) {
       $return .= '</div>';
     $return .= '</div>';
   $return .= '</div>';
-  
+
   $return .= '<div class="detail-item materials-wrapper">';
     $return .= '<h4>Materials</h4>';
     $return .= $o['materials'][0];
   $return .= '</div>';
-  
+
   $return .= '<div class="clear"></div>';
-  
+
   return $return;
 }
 
@@ -991,7 +991,7 @@ function oit_method_examples($data) {
     }
     $return .= '</div>';
   }
-  
+
   return $return;
 }
 
@@ -1001,7 +1001,7 @@ function oit_method_examples_v1($method_id) {
   $return = '';
   $serialized_id = serialize((string)$method_id);
   $examples = oit_get_method_examples($serialized_id);
-  
+
   if($examples) {
     $return .= '<div class="method-examples">';
     foreach ($examples as $example) {
@@ -1009,7 +1009,7 @@ function oit_method_examples_v1($method_id) {
     }
     $return .= '</div>';
   }
-  
+
   return $return;
 }
 
@@ -1029,21 +1029,21 @@ function oit_get_method_examples($serialized_id) {
       ),
     )
   ));
-  
+
   wp_reset_query();
   return $examples;
 }
 
 function oit_display_method_examples($example) {
   $return = '';
-  
+
   $o = get_post_meta($example->ID);
-  
+
   $project_link = $o['project_link'][0];
   if(!empty($project_link)) {
     $project_link_url = addhttp($project_link);
   }
-  
+
   $image = get_field('project_image', $example->ID);
   $return .= '<div class="example-item">';
     $return .= '<h4 class="example-title">'.$example->post_title.'</h4>';
@@ -1078,7 +1078,7 @@ function oit_method_resources_v1($method_id) {
   $return = '';
   $serialized_id = serialize((string)$method_id);
   $resources = oit_get_method_resources($serialized_id);
-  
+
   if($resources) {
     $return .= '<div class="method-resources">';
     foreach ($resources as $resource) {
@@ -1086,7 +1086,7 @@ function oit_method_resources_v1($method_id) {
     }
     $return .= '</div>';
   }
-  
+
   return $return;
 }
 
@@ -1106,7 +1106,7 @@ function oit_get_method_resources($serialized_id) {
       ),
     )
   ));
-  
+
   wp_reset_query();
   return $resources;
 }
@@ -1134,7 +1134,7 @@ add_rewrite_rule('^ajax/([^/]+)/?$','index.php?pagename=ajax&action=$matches[1]'
 
 function oit_contribute_form() {
   global $post;
-  
+
   $return = '';
   $contribute_type = get_query_var('action');
   $contribute_types = array(
@@ -1143,9 +1143,9 @@ function oit_contribute_form() {
       'example' => 'Submit an example',
       'resource' => 'Submit a resource'
   );
-  
-  
-  
+
+
+
   $return .= '<div class="form-wrapper">';
     $return .= '<div class="custom-form">';
       $return .= '<form name="frmContribute" enctype="multipart/form-data" method="post" action="'.SITE_URL.'/ajax/contribute" class="ajax-form">';
@@ -1156,29 +1156,29 @@ function oit_contribute_form() {
         $return .= '<div class="field-group">';
           $return .= '<label for="cmb_type" class="hidden-sm-down hidden-xs-up">Contribution Type</label>';
           $return .= '<select type="text" id="cmb_type" name="cmb_type" class="custom-dropdown">';
-          
+
           foreach($contribute_types as $key=>$val) {
             $return .= '<option value="'.$key.'"'.(($key==$contribute_type) ? ' selected="selected"' : '').'>'.$val.'</option>';
           }
           $return .= '</select>';
         $return .= '</div>';
-      
-      
+
+
         $return .= '<div class="field-group">';
           $return .= '<label for="txt_name">Name</label>';
           $return .= '<input type="text" id="txt_name" name="txt_name" class="field-input" />';
         $return .= '</div>';
-        
+
         $return .= '<div class="field-group">';
           $return .= '<label for="txt_email">Email Address (required)</label>';
           $return .= '<input type="text" id="txt_email" name="txt_email" class="field-input required email" />';
         $return .= '</div>';
-        
+
         $return .= '<div class="field-group">';
           $return .= '<label for="txt_message">Message (required)</label>';
           $return .= '<textarea id="txt_message" name="txt_message" class="field-input required"></textarea>';
         $return .= '</div>';
-        
+
         $return .= '<div class="field-group">';
           $return .= '<label for="txt_attachment">Image Attachment</label>';
 
@@ -1189,15 +1189,15 @@ function oit_contribute_form() {
           $return .= '</div>';
           $return .= '<div class="clear"></div>';
         $return .= '</div>';
-        
+
         $return .= '<div class="field-group field-group-terms">';
           $return .= '<input type="checkbox" id="chk_terms" name="chk_terms" class="required" /> &nbsp; I agree to the <a href="#" data-toggle="modal" data-target="#modalSubmissionTerms">Toolkit Submission Terms</a>';
         $return .= '</div>';
-        
+
 //        $return .= '<div class="field-group field-group-recaptcha">';
 //          $return .= '<div class="g-recaptcha" data-sitekey="6LcuJSUTAAAAAGfyCSFI4zN_o0TKkPTokmvH0qt3"></div>';
 //        $return .= '</div>';
-        
+
         $return .= '<div class="field-group field-group-action">';
           $return .= '<input type="hidden" name="http_referer" value="'.$_SERVER['HTTP_REFERER'].'" />';
           $return .= '<input type="submit" class="field-submit" value="Submit" />';
@@ -1206,7 +1206,7 @@ function oit_contribute_form() {
       $return .= '</form>';
     $return .= '</div>';
   $return .= '</div>';
-  
+
   $return .= '<div id="modalSubmissionTerms" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -1220,7 +1220,7 @@ function oit_contribute_form() {
     </div>
   </div>
 </div>';
-  
+
   return $return;
 }
 
@@ -1249,8 +1249,8 @@ function oit_method_duration($o) {
   }
 
 
-  
-  
+
+
   // if($max > 0) {
   //   $return .= $minDays . ' - ' . $maxDays . ' Day'.(($max > 1) ? 's': '');
   // } else {
@@ -1314,7 +1314,7 @@ function oit_method_image($process_term_id) {
 function oit_message_slider() {
   global $post;
   $return = '';
-  
+
   $messages = get_field('message_text', $post->ID);
   if($messages) {
     $return .= '<ul>';
