@@ -826,8 +826,8 @@ function oit_home_processes() {
 
 
   $return = '<section id="section-processes" class="'.$active_slug.'">';
-    $return .= '<a href="#prev" class="prev">Previous</a>';
-    $return .= '<a href="#next" class="next">Next</a>';
+  //  $return .= '<a href="#prev" class="prev">Previous</a>';
+  //  $return .= '<a href="#next" class="next">Next</a>';
 
 
     $return .= '<div class="container">';
@@ -838,8 +838,10 @@ function oit_home_processes() {
               $return .= '<div class="home-illustration-wrapper">'.$illustrations.'</div>';
             $return .= '</div>';
 
+            $emma_content  = 'hi' . $active_slug;
+
             $return .= '<div class="col-lg-6 col-xs-12 illustration-content-wrapper">';
-              $return .= '<div class="process-illustration-content">'.$process_content.'</div>';
+              $return .= '<div class="process-illustration-content">'.$emma_content.'</div>';
             $return .= '</div>';
           $return .= '</div>';
         $return .= '</div>';
