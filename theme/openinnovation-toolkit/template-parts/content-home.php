@@ -12,15 +12,15 @@
       </div>
     </div>
 
-    <div class="abstarct abstract-home-tl hidden-md-down"><img src="<?php echo THEME_PATH;?>/images/abstract-home-tl.png" alt="" /></div>
-    <div class="abstarct abstract-home-tr hidden-md-down"><img src="<?php echo THEME_PATH;?>/images/abstract-home-tr.png" alt="" /></div>
+    <div class="abstarct abstract-home-tl hidden-md-down"></div>
+    <div class="abstarct abstract-home-tr hidden-md-down"></div>
   </div>
 </section>
 <section class="home-section section-questions">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-xs-12 col-md-offset-1">
-         <h2 <a href="">BUILD</a> | <a href="">EMPOWER</a> | <a href="">COMMUNICATE</a> | <a href="">OPEN<</a>/h2>
+         <h2 <a href="/gather-insights/">BUILD</a> | <a href="">EMPOWER</a> | <a href="">COMMUNICATE</a> | <a href="">OPEN</a>/h2>
       </div>
     </div>
   </div>
@@ -48,9 +48,7 @@
   <div class="container">
     <h3 class="heading3"><a href="<?php echo SITE_URL;?>/methods/">Browse Resources</a></h3>
     <div class="row">
-      BUILD EMPOWER ETC
-
-
+      <?php echo oit_methods();?>
     </div>
   </div>
 </section>
