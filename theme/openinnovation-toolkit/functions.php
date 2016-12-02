@@ -881,7 +881,7 @@ function oit_process_slider() {
                 $slide .= '<div class="col-lg-6 col-xs-12">';
                   $slide .= '<ul class="process-illustration">';
                     foreach($processList as $key=>$val) {
-                      echo "<b>" . $key=>$val . "<b>";
+                      //$slide = "<b>" . $key=>$val . "<b>";
                     //  $slide .= '<li class="process-'.$key.(($key==$process->post_name) ? ' active': ' hidden-md-down').'">'.$val.'</li>';
                     }
                   $slide .= '</ul>';
