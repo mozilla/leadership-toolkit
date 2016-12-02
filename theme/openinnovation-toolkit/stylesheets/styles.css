@@ -3002,7 +3002,7 @@ a {
 }
 
 /**
- * H E A D E R 
+ * H E A D E R
  * -----------------------------------
  */
 /* line 336, ../sass/styles.scss */
@@ -4262,7 +4262,7 @@ a {
 }
 
 /**
- * I N D I V I D U A L    M E T H O D 
+ * I N D I V I D U A L    M E T H O D
  * ----------------------------------
  */
 /* line 1349, ../sass/styles.scss */
@@ -4864,7 +4864,6 @@ body.prototype-test .detail-item h4 {
  */
 /* line 1779, ../sass/styles.scss */
 .section-messages-slider {
-  background-image: url(../images/bg-footer-left.png), url(../images/bg-footer-right.png);
   background-position: left 50px, right 50px;
   background-repeat: no-repeat, no-repeat;
 }
@@ -4923,7 +4922,7 @@ body.prototype-test .detail-item h4 {
 @media (max-width: 991px) {
   /* line 1779, ../sass/styles.scss */
   .section-messages-slider {
-    background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
+  //  background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
     background-position: left bottom, right bottom;
     /*    background-image: url(../images/bg-footer-left.png), url(../images/bg-footer-right.png);
         background-position: -200px 50px, right 50px;*/
@@ -5417,7 +5416,7 @@ body.prototype-test .detail-item h4 {
  */
 /* line 2298, ../sass/styles.scss */
 #process-slider {
-  background-image: url(../images/abstract-process-slider-top.png), url(../images/abstract-process-slider-bottom.png);
+//  background-image: url(../images/abstract-process-slider-top.png), url(../images/abstract-process-slider-bottom.png);
   background-position: right 10px, right 415px;
   background-repeat: no-repeat, no-repeat;
 }
@@ -5464,12 +5463,12 @@ body.prototype-test .detail-item h4 {
 /* line 2339, ../sass/styles.scss */
 #process-slider .bx-wrapper .bx-prev {
   left: 0;
-  background: url(../images/arrow-left.png) no-repeat 0 0;
+  //background: url(../images/arrow-left.png) no-repeat 0 0;
 }
 /* line 2345, ../sass/styles.scss */
 #process-slider .bx-wrapper .bx-next {
   right: 0;
-  background: url(../images/arrow-right.png) no-repeat 0 0;
+  //background: url(../images/arrow-right.png) no-repeat 0 0;
 }
 /* line 2350, ../sass/styles.scss */
 #process-slider .bx-wrapper .bx-prev:hover {
@@ -5503,19 +5502,19 @@ body.prototype-test .detail-item h4 {
   /* line 2377, ../sass/styles.scss */
   #process-slider ul li .process-illustration-wrapper {
     padding-bottom: 80px;
-    background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
+  //  background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
     background-repeat: no-repeat, no-repeat;
     background-position: left bottom, right bottom;
   }
   /* line 2386, ../sass/styles.scss */
   #process-slider .bx-wrapper .bx-prev {
     left: 25px;
-    background-image: url(../images/arrow-left-small.png);
+  //  background-image: url(../images/arrow-left-small.png);
   }
   /* line 2391, ../sass/styles.scss */
   #process-slider .bx-wrapper .bx-next {
     right: 25px;
-    background-image: url(../images/arrow-right-small.png);
+  //  background-image: url(../images/arrow-right-small.png);
   }
   /* line 2396, ../sass/styles.scss */
   #process-slider .bx-wrapper .bx-controls-direction a {
@@ -5531,7 +5530,7 @@ body.prototype-test .detail-item h4 {
 /* line 2409, ../sass/styles.scss */
 .page-about .section-about {
   padding: 60px 0 30px 0;
-  background-image: url(../images/abstract-about-topleft.png), url(../images/abstract-about-bottomright.png);
+  //background-image: url(../images/abstract-about-topleft.png), url(../images/abstract-about-bottomright.png);
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
 }
@@ -5571,7 +5570,7 @@ body.prototype-test .detail-item h4 {
 /* line 2444, ../sass/styles.scss */
 .section-philosophy {
   padding: 40px 0;
-  background-image: url(../images/abstract-philosophy-bottomleft.png), url(../images/abstract-philosophy-bottomright.png);
+//  background-image: url(../images/abstract-philosophy-bottomleft.png), url(../images/abstract-philosophy-bottomright.png);
   background-position: left bottom, right bottom;
   background-repeat: no-repeat, no-repeat;
 }
@@ -5579,7 +5578,7 @@ body.prototype-test .detail-item h4 {
   /* line 2444, ../sass/styles.scss */
   .section-philosophy {
     padding-bottom: 80px;
-    background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
+//    background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
     background-position: left bottom, right bottom;
   }
 }
@@ -5589,7 +5588,7 @@ body.prototype-test .detail-item h4 {
 /* line 2459, ../sass/styles.scss */
 .page-contribute {
   padding: 50px 0;
-  background-image: url(../images/abstract-contribute-topright.png), url(../images/abstract-contribute-bottomright.png);
+  //background-image: url(../images/abstract-contribute-topright.png), url(../images/abstract-contribute-bottomright.png);
   background-position: right top, right bottom;
   background-repeat: no-repeat, no-repeat;
 }
@@ -5601,7 +5600,7 @@ body.prototype-test .detail-item h4 {
   /* line 2459, ../sass/styles.scss */
   .page-contribute {
     padding-bottom: 80px;
-    background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
+  //  background-image: url(../images/abstract-bottomleft.png), url(../images/abstract-bottomright.png);
     background-position: left bottom, right bottom;
   }
 }
